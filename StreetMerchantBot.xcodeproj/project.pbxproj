@@ -16,8 +16,8 @@
 		785BC7D925EEF3B200E6F4EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 785BC7D725EEF3B200E6F4EE /* LaunchScreen.storyboard */; };
 		785BC7E425EEF3B200E6F4EE /* StreetMerchantBotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785BC7E325EEF3B200E6F4EE /* StreetMerchantBotTests.swift */; };
 		785BC7EF25EEF3B300E6F4EE /* StreetMerchantBotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785BC7EE25EEF3B300E6F4EE /* StreetMerchantBotUITests.swift */; };
-		785BC80425EF036900E6F4EE /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785BC80325EF036900E6F4EE /* ViewController2.swift */; };
 		785BC81625F0701B00E6F4EE /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785BC81525F0701A00E6F4EE /* WebViewController.swift */; };
+		785BC81F25F1B65800E6F4EE /* CheckOutSuccessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785BC81E25F1B65800E6F4EE /* CheckOutSuccessTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +54,8 @@
 		785BC7EE25EEF3B300E6F4EE /* StreetMerchantBotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetMerchantBotUITests.swift; sourceTree = "<group>"; };
 		785BC7F025EEF3B300E6F4EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		785BC7FF25EEF54B00E6F4EE /* StreetMerchantBot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StreetMerchantBot.entitlements; sourceTree = "<group>"; };
-		785BC80325EF036900E6F4EE /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		785BC81525F0701A00E6F4EE /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		785BC81E25F1B65800E6F4EE /* CheckOutSuccessTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutSuccessTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +106,7 @@
 		785BC7C825EEF3AE00E6F4EE /* StreetMerchantBot */ = {
 			isa = PBXGroup;
 			children = (
+				785BC81D25F1B5D600E6F4EE /* views */,
 				785BC7FF25EEF54B00E6F4EE /* StreetMerchantBot.entitlements */,
 				785BC7C925EEF3AF00E6F4EE /* AppDelegate.swift */,
 				785BC7CB25EEF3AF00E6F4EE /* SceneDelegate.swift */,
@@ -114,7 +115,6 @@
 				785BC7D525EEF3B200E6F4EE /* Assets.xcassets */,
 				785BC7D725EEF3B200E6F4EE /* LaunchScreen.storyboard */,
 				785BC7DA25EEF3B200E6F4EE /* Info.plist */,
-				785BC80325EF036900E6F4EE /* ViewController2.swift */,
 				785BC7D225EEF3AF00E6F4EE /* StreetMerchantBot.xcdatamodeld */,
 				785BC81525F0701A00E6F4EE /* WebViewController.swift */,
 			);
@@ -137,6 +137,14 @@
 				785BC7F025EEF3B300E6F4EE /* Info.plist */,
 			);
 			path = StreetMerchantBotUITests;
+			sourceTree = "<group>";
+		};
+		785BC81D25F1B5D600E6F4EE /* views */ = {
+			isa = PBXGroup;
+			children = (
+				785BC81E25F1B65800E6F4EE /* CheckOutSuccessTableViewCell.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,8 +277,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				785BC80425EF036900E6F4EE /* ViewController2.swift in Sources */,
 				785BC81625F0701B00E6F4EE /* WebViewController.swift in Sources */,
+				785BC81F25F1B65800E6F4EE /* CheckOutSuccessTableViewCell.swift in Sources */,
 				785BC7D425EEF3AF00E6F4EE /* StreetMerchantBot.xcdatamodeld in Sources */,
 				785BC7CE25EEF3AF00E6F4EE /* ViewController.swift in Sources */,
 				785BC7CA25EEF3AF00E6F4EE /* AppDelegate.swift in Sources */,

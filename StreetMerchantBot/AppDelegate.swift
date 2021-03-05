@@ -13,7 +13,7 @@ import WebKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    var _window: UIWindow? {
+    private var _window: UIWindow? {
         guard let scene = UIApplication.shared.connectedScenes.first,
               let windowSceneDelegate = scene.delegate as? UIWindowSceneDelegate,
               let window = windowSceneDelegate.window else {
