@@ -17,24 +17,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KMH-Dp-FBE">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="86" width="414" height="776"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckOutCell" id="QAU-Re-UgH" customClass="CheckOutSuccessTableViewCell" customModule="StreetMerchantBot" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="88.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QAU-Re-UgH" id="GfM-Nh-ylI">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="88.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gpu_image.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="4ji-Mu-zsH">
-                                                    <rect key="frame" x="20" y="10" width="120" height="68.5"/>
+                                                    <rect key="frame" x="20" y="10" width="120" height="68"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="kq4-eg-kEO"/>
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxr-gl-uGD">
-                                                    <rect key="frame" x="160" y="33.5" width="214" height="20"/>
+                                                    <rect key="frame" x="160" y="33" width="214" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="30" id="5ek-Qy-dcX"/>
                                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="20" id="6eE-tJ-XUP"/>
@@ -50,7 +50,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5y5-SQ-hdI">
-                                                    <rect key="frame" x="160" y="8.5" width="37" height="20"/>
+                                                    <rect key="frame" x="160" y="8" width="37" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="20" id="eVO-dy-yuf"/>
                                                     </constraints>
@@ -62,7 +62,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04i-bC-981">
-                                                    <rect key="frame" x="160" y="58.5" width="234" height="20"/>
+                                                    <rect key="frame" x="160" y="58" width="234" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="72" id="P1K-be-eln"/>
                                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="20" id="gPB-bR-ub1"/>
@@ -103,14 +103,26 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Added to cart" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeO-Re-u41">
+                                <rect key="frame" x="0.0" y="44" width="414" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="3Ki-l9-Jhu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="KMH-Dp-FBE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7ns-Hf-0kL"/>
+                            <constraint firstItem="jeO-Re-u41" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2oJ-Ah-NaG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KMH-Dp-FBE" secondAttribute="trailing" id="KWK-Hs-uIv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KMH-Dp-FBE" secondAttribute="bottom" id="Ubt-gv-gmr"/>
+                            <constraint firstItem="KMH-Dp-FBE" firstAttribute="top" secondItem="jeO-Re-u41" secondAttribute="bottom" constant="10" id="ejA-AI-giw"/>
                             <constraint firstItem="KMH-Dp-FBE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qww-Be-reo"/>
+                            <constraint firstItem="jeO-Re-u41" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wUe-M5-Jp6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jeO-Re-u41" secondAttribute="trailing" id="yUF-cM-QPX"/>
                         </constraints>
                     </view>
                     <connections>

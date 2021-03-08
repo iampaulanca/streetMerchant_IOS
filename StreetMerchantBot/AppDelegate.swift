@@ -45,21 +45,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // For silent notifications
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        guard let url = userInfo["url"] as? String else {
-            completionHandler(.noData)
-            return
-        }
         
-        guard let urlCart = userInfo["urlCart"] as? String else {
-            completionHandler(.noData)
-            return
-        }
+        guard let url = userInfo["url"] as? String else { return }
+        
+        guard let urlCart =  userInfo["urlCart"] as? String else { return }
+        
+        let model = userInfo["model"] as? String ?? ""
+        let brand = userInfo["brand"] as? String ?? ""
+        let store = userInfo["store"] as? String ?? ""
+        let maxPrice = userInfo["maxprice"] as? String ?? ""
+        
+        print(url, urlCart, model, brand, store, maxPrice)
         
         guard let window = _window else { return }
         
         let vc = (window.rootViewController as? ViewController)
-        vc?.urls.append(["test", url, urlCart])
+        vc?.urls.append(["\(brand) \(model)", url, urlCart])
         vc?.tableView.reloadData()
+        vc?.dismiss(animated: true, completion: nil)
         let webVC = WebViewController(url: URL(string: urlCart)!)
         let navVC = UINavigationController(rootViewController: webVC)
         vc?.present(navVC, animated: true, completion: nil)
@@ -171,7 +174,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         
         let brand = payload.userInfo["brand"] as? String ?? ""
         
-        let image = payload.userInfo["image"] as? String ?? ""
+        let store = payload.userInfo["store"] as? String ?? ""
+        
+        let maxPrice = payload.userInfo["maxprice"] as? String ?? "ERROR"
         
         let vc = (window.rootViewController as? ViewController)
         
@@ -185,9 +190,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             vc?.present(alert, animated: true, completion: nil)
         } else {
             
-            print(url, urlCart, image, model, brand)
-  
-            vc?.urls.append(["\(model) \(brand)", url, urlCart])
+            print(url, urlCart, model, brand, store, maxPrice)
+            
+            vc?.urls.append(["\(brand) \(model)", url, urlCart])
             vc?.tableView.reloadData()
             let webVC = WebViewController(url: URL(string: urlCart)!)
             let navVC = UINavigationController(rootViewController: webVC)
@@ -195,14 +200,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             
         }
         
-//        let vc = (window.rootViewController as? ViewController2)
-//        print(image)
-//        let data = try! Data(contentsOf: URL(string: image)!)
-//        vc?.image.image = UIImage(data: data)
-//        print(image.self)
-//
-//        vc?.label.text = urlCart
+        //        let vc = (window.rootViewController as? ViewController2)
+        //        vc?.label.text = urlCart
         
-       
+        
     }
 }

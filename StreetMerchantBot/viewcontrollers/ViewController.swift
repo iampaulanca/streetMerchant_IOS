@@ -26,8 +26,6 @@ class ViewController: UIViewController, WKUIDelegate {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = .white
-        self.view.backgroundColor = .blue
     }
 }
 
