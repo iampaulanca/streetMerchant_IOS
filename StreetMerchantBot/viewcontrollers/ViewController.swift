@@ -17,7 +17,7 @@ class ViewController: UIViewController, WKUIDelegate {
                  "https://www.amazon.com",
                  "https://www.amazon.com"],
                 ["bestbuy",
-                 "www.bestbuy.com",
+                 "www.somethingsuperlong.com",
                  "www.bestbuy.com"]]
     
     @IBOutlet weak var tableView: UITableView!
@@ -27,10 +27,31 @@ class ViewController: UIViewController, WKUIDelegate {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "segueToDetailVC") {
+            
+            let detailVC = segue.destination as! DetailViewController
+            detailVC.brand = "brand"
+            detailVC.urlCart = "cart"
+            detailVC.url = "url"
+            detailVC.model = "model"
+            detailVC.maxPrice = "maxPirce"
+            detailVC.timestamp = Date().description
+            detailVC.store = "store"
+        }
+    }
 }
 
 // TableView delegate/datasource functions
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath)
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: "segueToDetailVC", sender: cell)
+    }
     
     // Swipe to delete row
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -58,10 +79,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.urlButton.setTitle(urls[indexPath.row][1], for: .normal)
         cell.urlButton.contentHorizontalAlignment = .left
         cell.urlButton.titleLabel?.lineBreakMode = .byTruncatingTail
+        cell.urlButton.sizeToFit()
         
         cell.urlCartButton.setTitle(urls[indexPath.row][2], for: .normal)
         cell.urlCartButton.contentHorizontalAlignment = .left
         cell.urlCartButton.titleLabel?.lineBreakMode = .byTruncatingTail
+        cell.urlCartButton.sizeToFit()
     
         return cell
     }
