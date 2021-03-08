@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		785BC7CA25EEF3AF00E6F4EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785BC7C925EEF3AF00E6F4EE /* AppDelegate.swift */; };
 		785BC7CC25EEF3AF00E6F4EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785BC7CB25EEF3AF00E6F4EE /* SceneDelegate.swift */; };
-		785BC7CE25EEF3AF00E6F4EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785BC7CD25EEF3AF00E6F4EE /* ViewController.swift */; };
 		785BC7D125EEF3AF00E6F4EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 785BC7CF25EEF3AF00E6F4EE /* Main.storyboard */; };
 		785BC7D425EEF3AF00E6F4EE /* StreetMerchantBot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 785BC7D225EEF3AF00E6F4EE /* StreetMerchantBot.xcdatamodeld */; };
 		785BC7D625EEF3B200E6F4EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 785BC7D525EEF3B200E6F4EE /* Assets.xcassets */; };
@@ -18,6 +17,8 @@
 		785BC7EF25EEF3B300E6F4EE /* StreetMerchantBotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785BC7EE25EEF3B300E6F4EE /* StreetMerchantBotUITests.swift */; };
 		785BC81625F0701B00E6F4EE /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785BC81525F0701A00E6F4EE /* WebViewController.swift */; };
 		785BC81F25F1B65800E6F4EE /* CheckOutSuccessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785BC81E25F1B65800E6F4EE /* CheckOutSuccessTableViewCell.swift */; };
+		785BC82825F588DC00E6F4EE /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785BC82725F588DC00E6F4EE /* ViewController2.swift */; };
+		785BC83025F5A2F200E6F4EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785BC82F25F5A2F200E6F4EE /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +42,6 @@
 		785BC7C625EEF3AE00E6F4EE /* StreetMerchantBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetMerchantBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		785BC7C925EEF3AF00E6F4EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		785BC7CB25EEF3AF00E6F4EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		785BC7CD25EEF3AF00E6F4EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		785BC7D025EEF3AF00E6F4EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		785BC7D325EEF3AF00E6F4EE /* StreetMerchantBot.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StreetMerchantBot.xcdatamodel; sourceTree = "<group>"; };
 		785BC7D525EEF3B200E6F4EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +56,8 @@
 		785BC7FF25EEF54B00E6F4EE /* StreetMerchantBot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StreetMerchantBot.entitlements; sourceTree = "<group>"; };
 		785BC81525F0701A00E6F4EE /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		785BC81E25F1B65800E6F4EE /* CheckOutSuccessTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutSuccessTableViewCell.swift; sourceTree = "<group>"; };
+		785BC82725F588DC00E6F4EE /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		785BC82F25F5A2F200E6F4EE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,17 +108,16 @@
 		785BC7C825EEF3AE00E6F4EE /* StreetMerchantBot */ = {
 			isa = PBXGroup;
 			children = (
+				785BC82625F5889B00E6F4EE /* viewcontrollers */,
 				785BC81D25F1B5D600E6F4EE /* views */,
-				785BC7FF25EEF54B00E6F4EE /* StreetMerchantBot.entitlements */,
 				785BC7C925EEF3AF00E6F4EE /* AppDelegate.swift */,
 				785BC7CB25EEF3AF00E6F4EE /* SceneDelegate.swift */,
-				785BC7CD25EEF3AF00E6F4EE /* ViewController.swift */,
 				785BC7CF25EEF3AF00E6F4EE /* Main.storyboard */,
 				785BC7D525EEF3B200E6F4EE /* Assets.xcassets */,
 				785BC7D725EEF3B200E6F4EE /* LaunchScreen.storyboard */,
 				785BC7DA25EEF3B200E6F4EE /* Info.plist */,
+				785BC7FF25EEF54B00E6F4EE /* StreetMerchantBot.entitlements */,
 				785BC7D225EEF3AF00E6F4EE /* StreetMerchantBot.xcdatamodeld */,
-				785BC81525F0701A00E6F4EE /* WebViewController.swift */,
 			);
 			path = StreetMerchantBot;
 			sourceTree = "<group>";
@@ -145,6 +146,16 @@
 				785BC81E25F1B65800E6F4EE /* CheckOutSuccessTableViewCell.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		785BC82625F5889B00E6F4EE /* viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				785BC82F25F5A2F200E6F4EE /* ViewController.swift */,
+				785BC81525F0701A00E6F4EE /* WebViewController.swift */,
+				785BC82725F588DC00E6F4EE /* ViewController2.swift */,
+			);
+			path = viewcontrollers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,10 +288,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				785BC82825F588DC00E6F4EE /* ViewController2.swift in Sources */,
 				785BC81625F0701B00E6F4EE /* WebViewController.swift in Sources */,
 				785BC81F25F1B65800E6F4EE /* CheckOutSuccessTableViewCell.swift in Sources */,
 				785BC7D425EEF3AF00E6F4EE /* StreetMerchantBot.xcdatamodeld in Sources */,
-				785BC7CE25EEF3AF00E6F4EE /* ViewController.swift in Sources */,
+				785BC83025F5A2F200E6F4EE /* ViewController.swift in Sources */,
 				785BC7CA25EEF3AF00E6F4EE /* AppDelegate.swift in Sources */,
 				785BC7CC25EEF3AF00E6F4EE /* SceneDelegate.swift in Sources */,
 			);

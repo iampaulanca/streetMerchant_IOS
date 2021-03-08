@@ -43,8 +43,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
+    // For silent notifications
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        guard let label = userInfo["label"] as? String else {
+        guard let url = userInfo["url"] as? String else {
+            completionHandler(.noData)
+            return
+        }
+        
+        guard let urlCart = userInfo["urlCart"] as? String else {
             completionHandler(.noData)
             return
         }
@@ -52,9 +58,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let window = _window else { return }
         
         let vc = (window.rootViewController as? ViewController)
-        let webVC = WebViewController(url: URL(string: label)!)
+        vc?.urls.append(["test", url, urlCart])
+        vc?.tableView.reloadData()
+        let webVC = WebViewController(url: URL(string: urlCart)!)
         let navVC = UINavigationController(rootViewController: webVC)
-        
         vc?.present(navVC, animated: true, completion: nil)
         
         
@@ -151,16 +158,51 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         defer { completionHandler() }
         
         guard response.actionIdentifier == UNNotificationDefaultActionIdentifier else { return }
-        let payload = response.notification.request.content
-        guard let url = payload.userInfo["url"] as? String
-        else { return }
         
         guard let window = _window else { return }
         
-        let vc = (window.rootViewController as? ViewController)
-        let webVC = WebViewController(url: URL(string: url)!)
-        let navVC = UINavigationController(rootViewController: webVC)
+        let payload = response.notification.request.content
         
-        vc?.present(navVC, animated: true, completion: nil)
+        guard let url = payload.userInfo["url"] as? String else { return }
+        
+        guard let urlCart = payload.userInfo["urlCart"] as? String else { return }
+        
+        let model = payload.userInfo["model"] as? String ?? ""
+        
+        let brand = payload.userInfo["brand"] as? String ?? ""
+        
+        let image = payload.userInfo["image"] as? String ?? ""
+        
+        let vc = (window.rootViewController as? ViewController)
+        
+        if !urlCart.hasPrefix("https://") || !url.hasPrefix("https://") {
+            // alert user
+            let alert = UIAlertController(title: "Invalid url", message: "\(url) or \(urlCart) must be https.", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "OK", style: .default) { (action) in
+            }
+            alert.addAction(action)
+            vc?.present(alert, animated: true, completion: nil)
+        } else {
+            
+            print(url, urlCart, image, model, brand)
+  
+            vc?.urls.append(["\(model) \(brand)", url, urlCart])
+            vc?.tableView.reloadData()
+            let webVC = WebViewController(url: URL(string: urlCart)!)
+            let navVC = UINavigationController(rootViewController: webVC)
+            vc?.present(navVC, animated: true, completion: nil)
+            
+        }
+        
+//        let vc = (window.rootViewController as? ViewController2)
+//        print(image)
+//        let data = try! Data(contentsOf: URL(string: image)!)
+//        vc?.image.image = UIImage(data: data)
+//        print(image.self)
+//
+//        vc?.label.text = urlCart
+        
+       
     }
 }

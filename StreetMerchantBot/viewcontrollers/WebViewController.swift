@@ -22,7 +22,11 @@ class WebViewController: UIViewController {
     }()
     
     init(url: URL) {
-        self.url = url
+        if url.absoluteString.hasPrefix("https://") {
+            self.url = url
+        } else {
+            self.url = URL(string: "www.google.com")!
+        }
         super.init(nibName: nil, bundle: nil)
     }
     
