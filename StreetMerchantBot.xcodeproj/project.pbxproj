@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		785A4AB725F6D33B00007435 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785A4AB625F6D33B00007435 /* DetailViewController.swift */; };
+		785A4ABF25F6FBC500007435 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785A4ABE25F6FBC500007435 /* ConfigViewController.swift */; };
 		785BC7CA25EEF3AF00E6F4EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785BC7C925EEF3AF00E6F4EE /* AppDelegate.swift */; };
 		785BC7CC25EEF3AF00E6F4EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785BC7CB25EEF3AF00E6F4EE /* SceneDelegate.swift */; };
 		785BC7D125EEF3AF00E6F4EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 785BC7CF25EEF3AF00E6F4EE /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		785A4AB625F6D33B00007435 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		785A4ABE25F6FBC500007435 /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		785BC7C625EEF3AE00E6F4EE /* StreetMerchantBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetMerchantBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		785BC7C925EEF3AF00E6F4EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		785BC7CB25EEF3AF00E6F4EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				785BC82F25F5A2F200E6F4EE /* ViewController.swift */,
 				785BC81525F0701A00E6F4EE /* WebViewController.swift */,
 				785A4AB625F6D33B00007435 /* DetailViewController.swift */,
+				785A4ABE25F6FBC500007435 /* ConfigViewController.swift */,
 			);
 			path = viewcontrollers;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			files = (
 				785BC81625F0701B00E6F4EE /* WebViewController.swift in Sources */,
 				785BC81F25F1B65800E6F4EE /* CheckOutSuccessTableViewCell.swift in Sources */,
+				785A4ABF25F6FBC500007435 /* ConfigViewController.swift in Sources */,
 				785BC7D425EEF3AF00E6F4EE /* StreetMerchantBot.xcdatamodeld in Sources */,
 				785BC83025F5A2F200E6F4EE /* ViewController.swift in Sources */,
 				785BC7CA25EEF3AF00E6F4EE /* AppDelegate.swift in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SeY-So-cYf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,6 +8,54 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Config View Controller-->
+        <scene sceneID="pPs-Cy-ehW">
+            <objects>
+                <viewController id="SeY-So-cYf" customClass="ConfigViewController" customModule="StreetMerchantBot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rau-LP-hTv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4J-ft-p64">
+                                <rect key="frame" x="0.0" y="64" width="414" height="798"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esw-0F-684" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="3000"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="3000" id="Lgl-X0-Dg6"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="esw-0F-684" firstAttribute="leading" secondItem="2si-If-N1z" secondAttribute="leading" id="Bm0-CO-cbc"/>
+                                    <constraint firstItem="2si-If-N1z" firstAttribute="trailing" secondItem="esw-0F-684" secondAttribute="trailing" id="DM4-Wr-VIF"/>
+                                    <constraint firstItem="esw-0F-684" firstAttribute="top" secondItem="2si-If-N1z" secondAttribute="top" id="QKC-f0-JIb"/>
+                                    <constraint firstItem="esw-0F-684" firstAttribute="width" secondItem="2si-If-N1z" secondAttribute="width" multiplier="0.76087" id="VeH-DS-7kB"/>
+                                    <constraint firstItem="esw-0F-684" firstAttribute="bottom" secondItem="2si-If-N1z" secondAttribute="bottom" id="eVd-u2-ozY"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="2si-If-N1z"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="veO-fl-LJz"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="meN-ei-f9e"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="c4J-ft-p64" firstAttribute="leading" secondItem="meN-ei-f9e" secondAttribute="leading" id="706-MJ-ho5"/>
+                            <constraint firstItem="meN-ei-f9e" firstAttribute="bottom" secondItem="c4J-ft-p64" secondAttribute="bottom" id="M5X-We-eGP"/>
+                            <constraint firstItem="meN-ei-f9e" firstAttribute="trailing" secondItem="c4J-ft-p64" secondAttribute="trailing" id="XUq-vb-OXC"/>
+                            <constraint firstItem="c4J-ft-p64" firstAttribute="top" secondItem="meN-ei-f9e" secondAttribute="top" constant="20" id="kGr-jz-7Ve"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="configScrollView" destination="c4J-ft-p64" id="kM6-wM-78x"/>
+                        <outlet property="contentViewHeight" destination="Lgl-X0-Dg6" id="DFN-ce-3f2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vhc-oy-HB3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044.9275362318842" y="-621.42857142857144"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
