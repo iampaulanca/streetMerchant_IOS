@@ -13,20 +13,54 @@ class ConfigViewController: UIViewController {
     
     @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
     
-    func addSubToSrollView() {
+    var dict: [String: UITextField] = [:]
+    func addSubToScrollView() {
         
         let labelHeight = 25
         var y_coordinate = 10
         
         for config in configurables {
-            let label = UILabel(frame: CGRect(x: 10, y: y_coordinate, width: Int(self.view.frame.size.width), height: labelHeight))
+            let label = UILabel(frame: CGRect(x: 10, y: y_coordinate, width: Int(self.view.frame.size.width)/2, height: labelHeight))
             label.textAlignment = .left
             label.text = "\(config)"
-            label.adjustsFontSizeToFitWidth = true
+            label.font = UIFont(name: label.font.fontName, size: 10)
+            
+            let labelWidth = label.frame.size.width
+            
+            let textField = UITextField(frame: CGRect(x: 12+Int(labelWidth), y: y_coordinate, width: Int(self.view.frame.size.width - labelWidth - 12), height: labelHeight-1))
+            textField.layer.borderColor = UIColor.darkGray.cgColor
+            textField.layer.borderWidth = 1
+            textField.layer.cornerRadius = 5
             y_coordinate = labelHeight+y_coordinate
+            dict[label.text ?? "Error"] = textField
+            
+            
             configScrollView.addSubview(label)
+            configScrollView.addSubview(textField)
         }
-        contentViewHeight.constant = CGFloat(y_coordinate + 300)
+        let button = UIButton(frame: CGRect(x: Int(self.view.frame.size.width)/2, y: y_coordinate, width: 50, height: 25))
+        button.setTitle("Submit", for: .normal)
+        button.backgroundColor = .systemBlue
+        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.darkGray, for: .highlighted)
+        button.layer.cornerRadius = 5
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        configScrollView.addSubview(button)
+        
+        contentViewHeight.constant = CGFloat(y_coordinate+200)
+        
+    }
+    @objc func buttonAction(sender: UIButton!) {
+        print("Button tapped")
+        for (key, textField) in dict {
+            if textField.text != "" {
+                print("\(key): \(textField.text)")
+            }
+            
+        }
     }
     let configurables = ["ASCII_BANNER",
                          "ASCII_COLOR",
@@ -152,7 +186,8 @@ class ConfigViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubToSrollView()
+        addSubToScrollView()
+        hideKeyboardWhenTappedAround()
     }
     
 }
