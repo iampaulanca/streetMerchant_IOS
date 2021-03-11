@@ -13,181 +13,87 @@ class ConfigViewController: UIViewController {
     
     @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
     
-    var dict: [String: UITextField] = [:]
-    func addSubToScrollView() {
-        
-        let labelHeight = 25
-        var y_coordinate = 10
-        
-        for config in configurables {
-            let label = UILabel(frame: CGRect(x: 10, y: y_coordinate, width: Int(self.view.frame.size.width)/2, height: labelHeight))
-            label.textAlignment = .left
-            label.text = "\(config)"
-            label.font = UIFont(name: label.font.fontName, size: 10)
-            
-            let labelWidth = label.frame.size.width
-            
-            let textField = UITextField(frame: CGRect(x: 12+Int(labelWidth), y: y_coordinate, width: Int(self.view.frame.size.width - labelWidth - 12), height: labelHeight-1))
-            textField.layer.borderColor = UIColor.darkGray.cgColor
-            textField.layer.borderWidth = 1
-            textField.layer.cornerRadius = 5
-            y_coordinate = labelHeight+y_coordinate
-            dict[label.text ?? "Error"] = textField
-            
-            
-            configScrollView.addSubview(label)
-            configScrollView.addSubview(textField)
-        }
-        let button = UIButton(frame: CGRect(x: Int(self.view.frame.size.width)/2, y: y_coordinate, width: 50, height: 25))
-        button.setTitle("Submit", for: .normal)
-        button.backgroundColor = .systemBlue
-        button.setTitleColor(.white, for: .normal)
-        button.setTitleColor(.darkGray, for: .highlighted)
-        button.layer.cornerRadius = 5
-        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        
-        button.titleLabel?.adjustsFontSizeToFitWidth = true
-        
-        configScrollView.addSubview(button)
-        
-        contentViewHeight.constant = CGFloat(y_coordinate+200)
-        
-    }
+    var configDic: [String: String] = [:]
+    
     @objc func buttonAction(sender: UIButton!) {
-        print("Button tapped")
-        for (key, textField) in dict {
-            if textField.text != "" {
-                print("\(key): \(textField.text)")
-            }
-            
+        for (key, value) in self.configDic {
+            print(key, value)
         }
     }
-    let configurables = ["ASCII_BANNER",
-                         "ASCII_COLOR",
-                         "AUTO_ADD_TO_CART",
-                         "BROWSER_TRUSTED",
-                         "DESKTOP_NOTIFICATIONS",
-                         "DISCORD_NOTIFY_GROUP",
-                         "DISCORD_NOTIFY_GROUP_3060",
-                         "DISCORD_NOTIFY_GROUP_3060TI",
-                         "DISCORD_NOTIFY_GROUP_3070",
-                         "DISCORD_NOTIFY_GROUP_3080",
-                         "DISCORD_NOTIFY_GROUP_3090",
-                         "DISCORD_NOTIFY_GROUP_CORSAIR_SF",
-                         "DISCORD_NOTIFY_GROUP_RX6800",
-                         "DISCORD_NOTIFY_GROUP_RX6800XT",
-                         "DISCORD_NOTIFY_GROUP_RX6900XT",
-                         "DISCORD_NOTIFY_GROUP_RYZEN5600",
-                         "DISCORD_NOTIFY_GROUP_RYZEN5800",
-                         "DISCORD_NOTIFY_GROUP_RYZEN5900",
-                         "DISCORD_NOTIFY_GROUP_RYZEN5950",
-                         "DISCORD_NOTIFY_GROUP_SONYPS5C",
-                         "DISCORD_NOTIFY_GROUP_SONYPS5DE",
-                         "DISCORD_NOTIFY_GROUP_XBOXSX",
-                         "DISCORD_NOTIFY_GROUP_XBOXSS",
-                         "DISCORD_NOTIFY_GROUP_TEST",
-                         "DISCORD_WEB_HOOK",
-                         "EMAIL_PASSWORD",
-                         "EMAIL_TO",
-                         "EMAIL_USERNAME",
-                         "HEADLESS",
-                         "IN_STOCK_WAIT_TIME",
-                         "LOG_LEVEL",
-                         "LOW_BANDWIDTH",
-                         "MAX_PRICE_SERIES_3060",
-                         "MAX_PRICE_SERIES_3060TI",
-                         "MAX_PRICE_SERIES_3070",
-                         "MAX_PRICE_SERIES_3080",
-                         "MAX_PRICE_SERIES_3090",
-                         "MAX_PRICE_SERIES_CORSAIR_SF",
-                         "MAX_PRICE_SERIES_RX6800",
-                         "MAX_PRICE_SERIES_RX6800XT",
-                         "MAX_PRICE_SERIES_RX6900XT",
-                         "MAX_PRICE_SERIES_RYZEN5600",
-                         "MAX_PRICE_SERIES_RYZEN5800",
-                         "MAX_PRICE_SERIES_RYZEN5900",
-                         "MAX_PRICE_SERIES_RYZEN5950",
-                         "MAX_PRICE_SERIES_SONYPS5C",
-                         "MAX_PRICE_SERIES_SONYPS5DE",
-                         "MAX_PRICE_SERIES_XBOXSS",
-                         "MAX_PRICE_SERIES_XBOXSX",
-                         "MAX_PRICE_SERIES_TEST",
-                         "MICROCENTER_LOCATION",
-                         "MQTT_BROKER_ADDRESS",
-                         "MQTT_BROKER_PORT",
-                         "MQTT_CLIENT_ID",
-                         "MQTT_PASSWORD",
-                         "MQTT_QOS",
-                         "MQTT_TOPIC",
-                         "MQTT_USERNAME",
-                         "OPEN_BROWSER",
-                         "PAGE_BACKOFF_MIN",
-                         "PAGE_BACKOFF_MAX",
-                         "PAGE_SLEEP_MIN",
-                         "PAGE_SLEEP_MAX",
-                         "PAGE_TIMEOUT",
-                         "PAGERDUTY_INTEGRATION_KEY",
-                         "PAGERDUTY_SEVERITY",
-                         "PHILIPS_HUE_API_KEY",
-                         "PHILIPS_HUE_CLOUD_ACCESS_TOKEN",
-                         "PHILIPS_HUE_CLOUD_CLIENT_ID",
-                         "PHILIPS_HUE_CLOUD_CLIENT_SECRET",
-                         "PHILIPS_HUE_CLOUD_REFRESH_TOKEN",
-                         "PHILIPS_HUE_LAN_BRIDGE_IP",
-                         "PHILIPS_HUE_LIGHT_COLOR",
-                         "PHILIPS_HUE_LIGHT_IDS",
-                         "PHILIPS_HUE_LIGHT_PATTERN",
-                         "PHONE_CARRIER",
-                         "PHONE_NUMBER",
-                         "PLAY_SOUND",
-                         "PROXY_ADDRESS",
-                         "PROXY_PROTOCOL",
-                         "PROXY_PORT",
-                         "PUSHBULLET",
-                         "PUSHOVER_EXPIRE",
-                         "PUSHOVER_RETRY",
-                         "PUSHOVER_TOKEN",
-                         "PUSHOVER_USER",
-                         "PUSHOVER_PRIORITY",
-                         "RESTART_TIME",
-                         "SCREENSHOT",
-                         "SHOW_ONLY_BRANDS",
-                         "SHOW_ONLY_MODELS",
-                         "SHOW_ONLY_SERIES",
-                         "SLACK_CHANNEL",
-                         "SLACK_TOKEN",
-                         "SMARTTHINGS_TOKEN",
-                         "SMARTTHINGS_SWITCH_LABEL",
-                         "SMTP_ADDRESS",
-                         "SMTP_PORT",
-                         "STORES",
-                         "TELEGRAM_ACCESS_TOKEN",
-                         "TELEGRAM_CHAT_ID",
-                         "TWILIO_ACCOUNT_SID",
-                         "TWILIO_AUTH_TOKEN",
-                         "TWILIO_FROM_NUMBER",
-                         "TWILIO_TO_NUMBER",
-                         "TWITCH_ACCESS_TOKEN",
-                         "TWITCH_CHANNEL",
-                         "TWITCH_CLIENT_ID",
-                         "TWITCH_CLIENT_SECRET",
-                         "TWITCH_REFRESH_TOKEN",
-                         "TWITTER_ACCESS_TOKEN_KEY",
-                         "TWITTER_ACCESS_TOKEN_SECRET",
-                         "TWITTER_CONSUMER_KEY",
-                         "TWITTER_CONSUMER_SECRET",
-                         "TWITTER_TWEET_TAGS",
-                         "STREAMLABS_ACCESS_TOKEN",
-                         "STREAMLABS_TYPE",
-                         "STREAMLABS_IMAGE",
-                         "STREAMLABS_SOUND",
-                         "STREAMLABS_DURATION",
-                         "WEB_PORT"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubToScrollView()
         hideKeyboardWhenTappedAround()
+        self.getConfig()
+    }
+    
+    func setupScrollView() {
+        DispatchQueue.main.async {
+            let labelHeight = 25
+            let labelWidth = Int(self.view.frame.size.width)/2
+            var y_coordinate = 10
+            for (key, value) in self.configDic.sorted(by: {$0.key < $1.key}) {
+                let label = UILabel(frame: CGRect(x: 10, y: y_coordinate, width: labelWidth, height: labelHeight))
+                label.textAlignment = .left
+                label.text = "\(key)"
+                label.font = UIFont(name: label.font.fontName, size: 10)
+                
+                let textField = UITextField(frame: CGRect(x: 12+Int(labelWidth), y: y_coordinate, width: Int(self.view.frame.size.width) - labelWidth - 16, height: labelHeight-1))
+                textField.layer.borderColor = UIColor.darkGray.cgColor
+                textField.layer.borderWidth = 1
+                textField.layer.cornerRadius = 5
+                textField.font = UIFont(name: textField.font!.fontName, size: 13)
+                textField.text = value
+                
+                textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+                textField.leftViewMode = .always
+
+                textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+                textField.rightViewMode = .always
+                
+                y_coordinate += labelHeight
+                
+                self.configScrollView.addSubview(label)
+                self.configScrollView.addSubview(textField)
+            }
+            
+            let button = UIButton(frame: CGRect(x: Int(self.view.frame.size.width)/2, y: y_coordinate+15, width: 50, height: 25))
+            button.setTitle("Submit", for: .normal)
+            button.backgroundColor = .systemBlue
+            button.setTitleColor(.white, for: .normal)
+            button.setTitleColor(.darkGray, for: .highlighted)
+            button.layer.cornerRadius = 5
+            button.addTarget(self, action: #selector(self.buttonAction), for: .touchUpInside)
+            button.titleLabel?.adjustsFontSizeToFitWidth = true
+
+            self.configScrollView.addSubview(button)
+            self.contentViewHeight.constant = CGFloat(y_coordinate+50)
+        }
+    }
+    
+    func getConfig() {
+        let url = URL(string: "http://localhost:5000/getConfig")!
+        let request = URLRequest(url: url)
+        
+        URLSession(configuration: .default).dataTask(with: request) { (data,response,error) in
+            if error != nil {
+                print("error occurred, \(error.debugDescription)")
+                return
+            }
+            
+            guard let data = data else { return }
+            
+            do {
+                let configDict = try JSONSerialization.jsonObject(with: data, options: [])
+                let sorted = (configDict as! [String: String]).sorted(by: { $0.key < $1.key })
+                for sortedDict in sorted {
+                    self.configDic[sortedDict.key] = sortedDict.value
+                }
+                self.setupScrollView()
+            } catch {
+                print("some error happened")
+            }
+        }.resume()
     }
     
 }

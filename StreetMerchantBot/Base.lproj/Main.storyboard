@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SeY-So-cYf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aiG-h5-Nfa">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,16 +8,96 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Config View Controller-->
-        <scene sceneID="pPs-Cy-ehW">
+        <!--Login View Controller-->
+        <scene sceneID="frP-Ra-vTs">
             <objects>
-                <viewController id="SeY-So-cYf" customClass="ConfigViewController" customModule="StreetMerchantBot" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Rau-LP-hTv">
+                <viewController id="EaD-3p-MOh" customClass="LoginViewController" customModule="StreetMerchantBot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tYM-B7-MDl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Thx-CC-u6q" customClass="RoundTextField" customModule="StreetMerchantBot" customModuleProvider="target">
+                                <rect key="frame" x="107" y="223" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="LJ9-3y-ZtI"/>
+                                    <constraint firstAttribute="width" constant="200" id="pZk-1U-zUD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="18"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7YH-Kt-W5Z" customClass="RoundTextField" customModule="StreetMerchantBot" customModuleProvider="target">
+                                <rect key="frame" x="107" y="313" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="JPc-3u-fYD"/>
+                                    <constraint firstAttribute="height" constant="40" id="oLM-Ct-7Mm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="18"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFv-cv-Kpg" customClass="RoundButton" customModule="StreetMerchantBot" customModuleProvider="target">
+                                <rect key="frame" x="157" y="453" width="100" height="40"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="7JV-Wa-WNM"/>
+                                    <constraint firstAttribute="height" constant="40" id="KsO-zW-dU9"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="login"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="18"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="submitButtonAction:" destination="EaD-3p-MOh" eventType="touchUpInside" id="0OO-Ks-2KZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="skW-ks-sCk"/>
+                        <color key="backgroundColor" red="0.21269384029999999" green="0.60340565440000005" blue="0.98123103379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7YH-Kt-W5Z" firstAttribute="top" secondItem="Thx-CC-u6q" secondAttribute="bottom" constant="50" id="ULC-wF-n7h"/>
+                            <constraint firstItem="Thx-CC-u6q" firstAttribute="top" secondItem="skW-ks-sCk" secondAttribute="top" constant="179" id="aW0-Ma-d69"/>
+                            <constraint firstItem="rFv-cv-Kpg" firstAttribute="centerX" secondItem="tYM-B7-MDl" secondAttribute="centerX" id="fLm-KL-nbH"/>
+                            <constraint firstItem="rFv-cv-Kpg" firstAttribute="top" secondItem="7YH-Kt-W5Z" secondAttribute="bottom" constant="100" id="tgy-4t-Vvv"/>
+                            <constraint firstItem="7YH-Kt-W5Z" firstAttribute="centerX" secondItem="tYM-B7-MDl" secondAttribute="centerX" id="yXL-sD-pLw"/>
+                            <constraint firstItem="Thx-CC-u6q" firstAttribute="centerX" secondItem="tYM-B7-MDl" secondAttribute="centerX" id="z5z-rF-DFr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="7YH-Kt-W5Z" id="Isc-SV-hLp"/>
+                        <outlet property="submitButton" destination="rFv-cv-Kpg" id="jp7-CI-aJa"/>
+                        <outlet property="userNameTextField" destination="Thx-CC-u6q" id="PeM-BX-lf5"/>
+                        <segue destination="aiG-h5-Nfa" kind="show" identifier="segueToVC" id="cfw-eN-Aez"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qf6-ZS-6qY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-848" y="64"/>
+        </scene>
+        <!--Config View Controller-->
+        <scene sceneID="pPs-Cy-ehW">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="SeY-So-cYf" customClass="ConfigViewController" customModule="StreetMerchantBot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rau-LP-hTv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4J-ft-p64">
-                                <rect key="frame" x="0.0" y="64" width="414" height="798"/>
+                                <rect key="frame" x="0.0" y="76" width="414" height="732"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esw-0F-684" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="3000"/>
@@ -47,6 +127,7 @@
                             <constraint firstItem="c4J-ft-p64" firstAttribute="top" secondItem="meN-ei-f9e" secondAttribute="top" constant="20" id="kGr-jz-7Ve"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="lLq-Qe-afp"/>
                     <connections>
                         <outlet property="configScrollView" destination="c4J-ft-p64" id="kM6-wM-78x"/>
                         <outlet property="contentViewHeight" destination="Lgl-X0-Dg6" id="DFN-ce-3f2"/>
@@ -54,18 +135,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vhc-oy-HB3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044.9275362318842" y="-621.42857142857144"/>
+            <point key="canvasLocation" x="1887" y="-269"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StreetMerchantBot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KMH-Dp-FBE">
-                                <rect key="frame" x="0.0" y="86" width="414" height="776"/>
+                                <rect key="frame" x="0.0" y="98" width="414" height="710"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckOutCell" id="QAU-Re-UgH" customClass="CheckOutSuccessTableViewCell" customModule="StreetMerchantBot" customModuleProvider="target">
@@ -152,7 +233,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Added to cart" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeO-Re-u41">
-                                <rect key="frame" x="0.0" y="44" width="414" height="32"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="3Ki-l9-Jhu"/>
                                 </constraints>
@@ -173,6 +254,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jeO-Re-u41" secondAttribute="trailing" id="yUF-cM-QPX"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="THN-kj-tob">
+                        <barButtonItem key="rightBarButtonItem" title="Configuration" id="jAJ-7k-L3o">
+                            <connections>
+                                <segue destination="SeY-So-cYf" kind="show" identifier="segueToConfig" id="uV9-R3-NMw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="KMH-Dp-FBE" id="Pyh-Q7-RTb"/>
                         <segue destination="L0k-ZD-Y8g" kind="showDetail" identifier="segueToDetailVC" id="nht-9U-ncp"/>
@@ -180,7 +268,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="50.724637681159422" y="63.616071428571423"/>
+            <point key="canvasLocation" x="960.86956521739137" y="63.616071428571423"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="3Ka-QM-R5E">
@@ -319,13 +407,46 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Avk-XI-Y4r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="992.75362318840587" y="63.616071428571423"/>
+            <point key="canvasLocation" x="1887" y="428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Mvf-cN-q39">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="aiG-h5-Nfa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="MFZ-LO-uRR"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WLu-7b-8GP">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="bRN-Mi-h6h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EWx-Vw-0ai" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="50.724637681159422" y="63.616071428571423"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="7YH-Kt-W5Z">
+            <size key="intrinsicContentSize" width="90" height="34"/>
+        </designable>
+        <designable name="Thx-CC-u6q">
+            <size key="intrinsicContentSize" width="92" height="34"/>
+        </designable>
+        <designable name="rFv-cv-Kpg">
+            <size key="intrinsicContentSize" width="34" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="gpu_image.jpg" width="187.5" height="67.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

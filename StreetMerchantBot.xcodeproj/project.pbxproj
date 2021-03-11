@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		780594A825F980C400AC67D9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780594A725F980C400AC67D9 /* LoginViewController.swift */; };
+		780594AD25F982D900AC67D9 /* InterfaceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780594AC25F982D900AC67D9 /* InterfaceBuilder.swift */; };
 		785A4AB725F6D33B00007435 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785A4AB625F6D33B00007435 /* DetailViewController.swift */; };
 		785A4ABF25F6FBC500007435 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785A4ABE25F6FBC500007435 /* ConfigViewController.swift */; };
 		785A4ACB25F72C2500007435 /* viewcontroller_dismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785A4ACA25F72C2500007435 /* viewcontroller_dismissKeyboard.swift */; };
@@ -21,6 +23,7 @@
 		785BC81625F0701B00E6F4EE /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785BC81525F0701A00E6F4EE /* WebViewController.swift */; };
 		785BC81F25F1B65800E6F4EE /* CheckOutSuccessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785BC81E25F1B65800E6F4EE /* CheckOutSuccessTableViewCell.swift */; };
 		785BC83025F5A2F200E6F4EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785BC82F25F5A2F200E6F4EE /* ViewController.swift */; };
+		7871686225F9886C0027A46F /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871686125F9886C0027A46F /* Token.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		780594A725F980C400AC67D9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		780594AC25F982D900AC67D9 /* InterfaceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceBuilder.swift; sourceTree = "<group>"; };
 		785A4AB625F6D33B00007435 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		785A4ABE25F6FBC500007435 /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		785A4ACA25F72C2500007435 /* viewcontroller_dismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewcontroller_dismissKeyboard.swift; sourceTree = "<group>"; };
@@ -62,6 +67,7 @@
 		785BC81525F0701A00E6F4EE /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		785BC81E25F1B65800E6F4EE /* CheckOutSuccessTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutSuccessTableViewCell.swift; sourceTree = "<group>"; };
 		785BC82F25F5A2F200E6F4EE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7871686125F9886C0027A46F /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				785A4ACA25F72C2500007435 /* viewcontroller_dismissKeyboard.swift */,
+				780594AC25F982D900AC67D9 /* InterfaceBuilder.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -131,6 +138,7 @@
 				785BC7DA25EEF3B200E6F4EE /* Info.plist */,
 				785BC7FF25EEF54B00E6F4EE /* StreetMerchantBot.entitlements */,
 				785BC7D225EEF3AF00E6F4EE /* StreetMerchantBot.xcdatamodeld */,
+				7871686125F9886C0027A46F /* Token.swift */,
 			);
 			path = StreetMerchantBot;
 			sourceTree = "<group>";
@@ -168,6 +176,7 @@
 				785BC81525F0701A00E6F4EE /* WebViewController.swift */,
 				785A4AB625F6D33B00007435 /* DetailViewController.swift */,
 				785A4ABE25F6FBC500007435 /* ConfigViewController.swift */,
+				780594A725F980C400AC67D9 /* LoginViewController.swift */,
 			);
 			path = viewcontrollers;
 			sourceTree = "<group>";
@@ -302,14 +311,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				780594AD25F982D900AC67D9 /* InterfaceBuilder.swift in Sources */,
 				785BC81625F0701B00E6F4EE /* WebViewController.swift in Sources */,
 				785BC81F25F1B65800E6F4EE /* CheckOutSuccessTableViewCell.swift in Sources */,
+				7871686225F9886C0027A46F /* Token.swift in Sources */,
 				785A4ACB25F72C2500007435 /* viewcontroller_dismissKeyboard.swift in Sources */,
 				785A4ABF25F6FBC500007435 /* ConfigViewController.swift in Sources */,
 				785BC7D425EEF3AF00E6F4EE /* StreetMerchantBot.xcdatamodeld in Sources */,
 				785BC83025F5A2F200E6F4EE /* ViewController.swift in Sources */,
 				785BC7CA25EEF3AF00E6F4EE /* AppDelegate.swift in Sources */,
 				785BC7CC25EEF3AF00E6F4EE /* SceneDelegate.swift in Sources */,
+				780594A825F980C400AC67D9 /* LoginViewController.swift in Sources */,
 				785A4AB725F6D33B00007435 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
