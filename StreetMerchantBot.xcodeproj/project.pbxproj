@@ -24,6 +24,7 @@
 		785BC81F25F1B65800E6F4EE /* CheckOutSuccessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785BC81E25F1B65800E6F4EE /* CheckOutSuccessTableViewCell.swift */; };
 		785BC83025F5A2F200E6F4EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785BC82F25F5A2F200E6F4EE /* ViewController.swift */; };
 		7871686225F9886C0027A46F /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7871686125F9886C0027A46F /* Token.swift */; };
+		78D0025525F9EEF000F906A8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0025425F9EEEF00F906A8 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		785BC81E25F1B65800E6F4EE /* CheckOutSuccessTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutSuccessTableViewCell.swift; sourceTree = "<group>"; };
 		785BC82F25F5A2F200E6F4EE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7871686125F9886C0027A46F /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		78D0025425F9EEEF00F906A8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				785BC7FF25EEF54B00E6F4EE /* StreetMerchantBot.entitlements */,
 				785BC7D225EEF3AF00E6F4EE /* StreetMerchantBot.xcdatamodeld */,
 				7871686125F9886C0027A46F /* Token.swift */,
+				78D0025425F9EEEF00F906A8 /* Constants.swift */,
 			);
 			path = StreetMerchantBot;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				780594AD25F982D900AC67D9 /* InterfaceBuilder.swift in Sources */,
 				785BC81625F0701B00E6F4EE /* WebViewController.swift in Sources */,
 				785BC81F25F1B65800E6F4EE /* CheckOutSuccessTableViewCell.swift in Sources */,
+				78D0025525F9EEF000F906A8 /* Constants.swift in Sources */,
 				7871686225F9886C0027A46F /* Token.swift in Sources */,
 				785A4ACB25F72C2500007435 /* viewcontroller_dismissKeyboard.swift in Sources */,
 				785A4ABF25F6FBC500007435 /* ConfigViewController.swift in Sources */,

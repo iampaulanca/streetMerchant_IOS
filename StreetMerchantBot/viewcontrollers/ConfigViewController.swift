@@ -72,8 +72,9 @@ class ConfigViewController: UIViewController {
     }
     
     func getConfig() {
-        let url = URL(string: "http://localhost:5000/getConfig")!
-        let request = URLRequest(url: url)
+        let url = URL(string: Constants.shared.hostGetConfig)!
+        var request = URLRequest(url: url)
+        request.addValue(UserDefaults.standard.string(forKey: "token") ?? "", forHTTPHeaderField: "x-access-token")
         
         URLSession(configuration: .default).dataTask(with: request) { (data,response,error) in
             if error != nil {
@@ -86,10 +87,17 @@ class ConfigViewController: UIViewController {
             do {
                 let configDict = try JSONSerialization.jsonObject(with: data, options: [])
                 let sorted = (configDict as! [String: String]).sorted(by: { $0.key < $1.key })
-                for sortedDict in sorted {
-                    self.configDic[sortedDict.key] = sortedDict.value
+                if sorted[0].key == "error" {
+                    DispatchQueue.main.async {
+                        UserDefaults.standard.removeObject(forKey: "token")
+                        self.navigationController?.dismiss(animated: true, completion: nil)
+                    }
+                } else {
+                    for sortedDict in sorted {
+                        self.configDic[sortedDict.key] = sortedDict.value
+                    }
+                    self.setupScrollView()
                 }
-                self.setupScrollView()
             } catch {
                 print("some error happened")
             }
