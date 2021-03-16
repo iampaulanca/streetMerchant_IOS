@@ -152,20 +152,20 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckOutCell" id="QAU-Re-UgH" customClass="CheckOutSuccessTableViewCell" customModule="StreetMerchantBot" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="88"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="88.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QAU-Re-UgH" id="GfM-Nh-ylI">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="88.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gpu_image.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="4ji-Mu-zsH">
-                                                    <rect key="frame" x="20" y="10" width="120" height="68"/>
+                                                    <rect key="frame" x="20" y="10" width="120" height="68.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="kq4-eg-kEO"/>
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxr-gl-uGD">
-                                                    <rect key="frame" x="160" y="33" width="214" height="20"/>
+                                                    <rect key="frame" x="160" y="33.5" width="214" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="30" id="5ek-Qy-dcX"/>
                                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="20" id="6eE-tJ-XUP"/>
@@ -181,7 +181,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5y5-SQ-hdI">
-                                                    <rect key="frame" x="160" y="8" width="37" height="20"/>
+                                                    <rect key="frame" x="160" y="8.5" width="37" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="20" id="eVO-dy-yuf"/>
                                                     </constraints>
@@ -193,7 +193,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04i-bC-981">
-                                                    <rect key="frame" x="160" y="58" width="234" height="20"/>
+                                                    <rect key="frame" x="160" y="58.5" width="234" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="30" id="P1K-be-eln"/>
                                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="20" id="gPB-bR-ub1"/>

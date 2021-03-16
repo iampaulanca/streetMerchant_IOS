@@ -9,9 +9,10 @@ import Foundation
 
 class Constants {
     static let shared = Constants()
-    let host = "http://127.0.0.1:5000/"
-    let hostLogin = "http://127.0.0.1:5000/login"
-    let hostGetConfig = "http://127.0.0.1:5000/getConfig"
+    let host = "http://192.168.86.82:5000"
+    let hostLogin = "http://192.168.86.82:5000/login"
+    let hostGetConfig = "http://192.168.86.82:5000/getConfig"
+    let hostUpdateConfig = "http://192.168.86.82:5000/updateConfig"
     private init() {}
     
 }
