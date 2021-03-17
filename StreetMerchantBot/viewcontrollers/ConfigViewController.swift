@@ -49,6 +49,10 @@ class ConfigViewController: UIViewController {
                     }
                 } else {
                     for sortedDict in sorted {
+                        if sortedDict.key == "SHOW_ONLY_SERIES" {
+                            let array = sortedDict.value.components(separatedBy: ",")
+                            UserDefaults.standard.setValue(array as [String], forKey: "showOnlySeries")
+                        }
                         self.configDic[sortedDict.key] = sortedDict.value
                     }
                     self.setupScrollView()
@@ -70,10 +74,7 @@ class ConfigViewController: UIViewController {
                 label.text = "\(key)"
                 label.font = UIFont(name: label.font.fontName, size: 10)
                 
-                if key == "SHOW_ONLY_SERIES" {
-                   
-                    
-                } else {
+                if key != "SHOW_ONLY_SERIES" {
                     let textField = UITextField(frame: CGRect(x: 12+Int(labelWidth), y: y_coordinate, width: Int(self.view.frame.size.width) - labelWidth - 16, height: labelHeight-1))
                     textField.layer.borderColor = UIColor.darkGray.cgColor
                     textField.layer.borderWidth = 1
@@ -83,7 +84,7 @@ class ConfigViewController: UIViewController {
                     
                     textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
                     textField.leftViewMode = .always
-
+                    
                     textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
                     textField.rightViewMode = .always
                     
@@ -104,7 +105,7 @@ class ConfigViewController: UIViewController {
             button.layer.cornerRadius = 5
             button.addTarget(self, action: #selector(self.buttonAction), for: .touchUpInside)
             button.titleLabel?.adjustsFontSizeToFitWidth = true
-
+            
             self.configScrollView.addSubview(button)
             self.contentViewHeight.constant = CGFloat(y_coordinate+50)
         }
@@ -112,7 +113,7 @@ class ConfigViewController: UIViewController {
     
     func updateConfig() {
         let url = URL(string: Constants.shared.hostUpdateConfig)!
-
+        
         do {
             var request = URLRequest(url: url)
             request.addValue(UserDefaults.standard.string(forKey: "token") ?? "", forHTTPHeaderField: "x-access-token")
