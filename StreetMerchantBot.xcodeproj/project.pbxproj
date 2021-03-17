@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		780594A825F980C400AC67D9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780594A725F980C400AC67D9 /* LoginViewController.swift */; };
 		780594AD25F982D900AC67D9 /* InterfaceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780594AC25F982D900AC67D9 /* InterfaceBuilder.swift */; };
+		783DE70C260197DD00AE8498 /* ModelSeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783DE70B260197DD00AE8498 /* ModelSeriesViewController.swift */; };
 		785A4AB725F6D33B00007435 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785A4AB625F6D33B00007435 /* DetailViewController.swift */; };
 		785A4ABF25F6FBC500007435 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785A4ABE25F6FBC500007435 /* ConfigViewController.swift */; };
 		785A4ACB25F72C2500007435 /* viewcontroller_dismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785A4ACA25F72C2500007435 /* viewcontroller_dismissKeyboard.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		780594A725F980C400AC67D9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		780594AC25F982D900AC67D9 /* InterfaceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceBuilder.swift; sourceTree = "<group>"; };
+		783DE70B260197DD00AE8498 /* ModelSeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSeriesViewController.swift; sourceTree = "<group>"; };
 		785A4AB625F6D33B00007435 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		785A4ABE25F6FBC500007435 /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		785A4ACA25F72C2500007435 /* viewcontroller_dismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewcontroller_dismissKeyboard.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				785A4AB625F6D33B00007435 /* DetailViewController.swift */,
 				785A4ABE25F6FBC500007435 /* ConfigViewController.swift */,
 				780594A725F980C400AC67D9 /* LoginViewController.swift */,
+				783DE70B260197DD00AE8498 /* ModelSeriesViewController.swift */,
 			);
 			path = viewcontrollers;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				785BC81F25F1B65800E6F4EE /* CheckOutSuccessTableViewCell.swift in Sources */,
 				78D0025525F9EEF000F906A8 /* Constants.swift in Sources */,
 				7871686225F9886C0027A46F /* Token.swift in Sources */,
+				783DE70C260197DD00AE8498 /* ModelSeriesViewController.swift in Sources */,
 				785A4ACB25F72C2500007435 /* viewcontroller_dismissKeyboard.swift in Sources */,
 				785A4ABF25F6FBC500007435 /* ConfigViewController.swift in Sources */,
 				785BC7D425EEF3AF00E6F4EE /* StreetMerchantBot.xcdatamodeld in Sources */,

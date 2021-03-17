@@ -257,11 +257,24 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="THN-kj-tob">
-                        <barButtonItem key="rightBarButtonItem" title="Configuration" id="jAJ-7k-L3o">
-                            <connections>
-                                <segue destination="SeY-So-cYf" kind="show" identifier="segueToConfig" id="uV9-R3-NMw"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Configuration" image="wrench" id="jAJ-7k-L3o">
+                                <connections>
+                                    <segue destination="SeY-So-cYf" kind="show" identifier="segueToConfig" id="uV9-R3-NMw"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="kill" image="skull" id="xNf-DV-aov">
+                                <connections>
+                                    <action selector="killButtonAction:" destination="BYZ-38-t0r" id="rjX-H7-ElI"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Search" image="searchList" id="oop-Ij-DTs">
+                                <connections>
+                                    <action selector="searchModelButtonAction:" destination="BYZ-38-t0r" id="LEV-u9-3Yj"/>
+                                    <segue destination="Leb-92-bTw" kind="presentation" id="CEK-R9-er4"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
@@ -272,6 +285,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2406" y="64"/>
+        </scene>
+        <!--Model Series View Controller-->
+        <scene sceneID="aZ8-yh-cQ9">
+            <objects>
+                <viewController id="Leb-92-bTw" customClass="ModelSeriesViewController" customModule="StreetMerchantBot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4t6-Wj-a3s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="2AZ-dV-y0Y"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BXH-pk-1JU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2954" y="1144"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="3Ka-QM-R5E">
@@ -445,6 +473,9 @@
     </designables>
     <resources>
         <image name="gpu_image.jpg" width="187.5" height="67.5"/>
+        <image name="searchList" width="50" height="50"/>
+        <image name="skull" width="50" height="50"/>
+        <image name="wrench" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

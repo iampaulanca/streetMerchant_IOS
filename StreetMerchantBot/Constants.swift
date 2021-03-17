@@ -13,6 +13,10 @@ class Constants {
     let hostLogin = "http://192.168.86.82:5000/login"
     let hostGetConfig = "http://192.168.86.82:5000/getConfig"
     let hostUpdateConfig = "http://192.168.86.82:5000/updateConfig"
+    let hostKillScript = "http://192.168.86.82:5000/killScript"
+    let hostGetModelSeries = "http://192.168.86.82:5000/getModelSeries"
+    
+    
     private init() {}
     
 }

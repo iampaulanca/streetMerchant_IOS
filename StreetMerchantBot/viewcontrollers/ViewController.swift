@@ -10,6 +10,34 @@ import WebKit
 
 class ViewController: UIViewController, WKUIDelegate {
     
+    @IBAction func killButtonAction(_ sender: Any) {
+        
+        let url = URL(string: Constants.shared.hostKillScript)!
+        var request = URLRequest(url: url)
+        request.addValue(UserDefaults.standard.string(forKey: "token") ?? "", forHTTPHeaderField: "x-access-token")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        URLSession(configuration: .default).dataTask(with: request) { (data,response,error) in
+            if error != nil {
+                print("error occurred, \(error.debugDescription)")
+                return
+            }
+            
+            guard let data = data else { return }
+            
+            if let jsonString = String(data: data, encoding: .utf8) {
+                print(jsonString)
+            }
+            
+        }.resume()
+        
+    }
+    
+    
+    @IBAction func searchModelButtonAction(_ sender: Any) {
+        
+        
+    }
     var urls = [["google",
                  "https://www.google.com",
                  "https://www.google.com"],
@@ -50,7 +78,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.cellForRow(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
-        self.performSegue(withIdentifier: "segueToDetailVC", sender: cell)
+        self.navigationController?.performSegue(withIdentifier: "segueToDetailVC", sender: cell)
+//        self.performSegue(withIdentifier: "segueToDetailVC", sender: cell)
     }
     
     // Swipe to delete row

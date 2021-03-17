@@ -16,8 +16,8 @@ class ConfigViewController: UIViewController {
     var configDicTextField: [String: UITextField] = [:]
     
     @objc func buttonAction(sender: UIButton!) {
-        print("perform update api call here")
         updateConfig()
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
@@ -64,29 +64,36 @@ class ConfigViewController: UIViewController {
             let labelWidth = Int(self.view.frame.size.width)/2
             var y_coordinate = 10
             for (key, value) in self.configDic.sorted(by: {$0.key < $1.key}) {
+                
                 let label = UILabel(frame: CGRect(x: 10, y: y_coordinate, width: labelWidth, height: labelHeight))
                 label.textAlignment = .left
                 label.text = "\(key)"
                 label.font = UIFont(name: label.font.fontName, size: 10)
                 
-                let textField = UITextField(frame: CGRect(x: 12+Int(labelWidth), y: y_coordinate, width: Int(self.view.frame.size.width) - labelWidth - 16, height: labelHeight-1))
-                textField.layer.borderColor = UIColor.darkGray.cgColor
-                textField.layer.borderWidth = 1
-                textField.layer.cornerRadius = 5
-                textField.font = UIFont(name: textField.font!.fontName, size: 13)
-                textField.text = value
-                
-                textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
-                textField.leftViewMode = .always
+                if key == "SHOW_ONLY_SERIES" {
+                   
+                    
+                } else {
+                    let textField = UITextField(frame: CGRect(x: 12+Int(labelWidth), y: y_coordinate, width: Int(self.view.frame.size.width) - labelWidth - 16, height: labelHeight-1))
+                    textField.layer.borderColor = UIColor.darkGray.cgColor
+                    textField.layer.borderWidth = 1
+                    textField.layer.cornerRadius = 5
+                    textField.font = UIFont(name: textField.font!.fontName, size: 13)
+                    textField.text = value
+                    
+                    textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+                    textField.leftViewMode = .always
 
-                textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
-                textField.rightViewMode = .always
+                    textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+                    textField.rightViewMode = .always
+                    
+                    self.configDicTextField[key] = textField
+                    y_coordinate += labelHeight
+                    
+                    self.configScrollView.addSubview(label)
+                    self.configScrollView.addSubview(textField)
+                }
                 
-                self.configDicTextField[key] = textField
-                y_coordinate += labelHeight
-                
-                self.configScrollView.addSubview(label)
-                self.configScrollView.addSubview(textField)
             }
             
             let button = UIButton(frame: CGRect(x: Int(self.view.frame.size.width)/2, y: y_coordinate+15, width: 50, height: 25))
